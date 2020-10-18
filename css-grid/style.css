@@ -122,7 +122,6 @@ p {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: auto 1fr;
   grid-template-areas:
     'header header'
     'sidebar container'
@@ -226,7 +225,7 @@ p {
 .hero {
   display: grid;
   grid-template-columns: 40vw 1fr;
-  row-gap: 3rem;
+  row-gap: 2rem;
   align-items: center;
 }
 
@@ -337,11 +336,6 @@ p {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 300px;
   }
-}
-
-.item {
-  display: grid;
-  overflow: hidden;
 }
 
 .item.long {
