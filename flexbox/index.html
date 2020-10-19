@@ -7,19 +7,25 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Flexbox</title>
   </head>
 
   <body>
     <div class="page-wrapper">
-      <header class="navbar">
+      <header class="navbar" id="navbar">
         <a href="#" class="logo"><span>Flex</span>box</a>
-        <nav class="nav-list">
-          <a href="#" class="nav-item active">About</a>
-          <a href="#" class="nav-item">Blog</a>
-          <a href="#" class="nav-item">Contact</a>
-        </nav>
+        <div class="nav">
+          <nav class="nav-list">
+            <a href="#" class="nav-item active">About</a>
+            <a href="#" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">Contact</a>
+          </nav>
+        </div>
+        <button class="btn-menu" onclick="toggleMenu()">
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
       </header>
 
       <div class="sidebar">
@@ -210,6 +216,13 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="./script.js"></script>
+    <script>
+      const navbar = document.getElementById('navbar');
+
+      function toggleMenu() {
+        navbar.classList.toggle('open');
+        document.body.classList.add('no-scroll');
+      }
+    </script>
   </body>
 </html>

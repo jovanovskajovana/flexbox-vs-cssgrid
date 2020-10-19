@@ -160,29 +160,85 @@ p {
 .logo {
   font-size: calc(1.4vw + 1rem);
   font-weight: 200;
+  z-index: 3;
 }
 
 .logo span {
   font-weight: 300;
 }
 
+.btn-menu {
+  display: none;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  height: 20px;
+  z-index: 3;
+}
+
+.btn-menu:hover,
+.btn-menu:focus,
+.btn-menu:active {
+  background-color: transparent;
+  border: 0;
+}
+
+.line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--text-primary);
+  transition: 0.4s ease-in-out;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 @media (max-width: 750px) {
-  .nav-list {
+  .btn-menu {
+    display: grid;
+  }
+
+  .nav {
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
-    grid-auto-rows: 15vw;
+    opacity: 0;
+    visibility: hidden;
+    display: grid;
     place-content: center;
-    place-items: center;
     width: 100%;
     height: 100vh;
     background-color: var(--bg-primary);
+    transition: 0.4s ease-in-out;
     z-index: 2;
   }
 
-  .nav-list.open {
+  .nav-list {
     display: grid;
+    justify-items: center;
+    transition: 0.4s ease-in-out;
+    transform: translateY(20px);
+  }
+
+  .open .nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .open .nav-list {
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .open .line:first-child {
+    transform: rotate(-45deg) translateY(7px);
+  }
+
+  .open .line:last-child {
+    transform: rotate(45deg) translateY(-7px);
   }
 }
 
@@ -191,6 +247,18 @@ p {
   font-size: 1rem;
   font-weight: 300;
   margin: 0 1em;
+}
+
+@media (max-width: 750px) {
+  .nav-item {
+    margin: 1em 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .open .nav-item {
+    opacity: 1;
+  }
 }
 
 .nav-item.active::after {
