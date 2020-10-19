@@ -29,7 +29,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: normal;
-  position: relative;
   margin: 0;
   padding: 0;
   -webkit-overflow-scrolling: touch;
@@ -125,7 +124,7 @@ p {
   grid-template-areas:
     'header header'
     'sidebar container'
-    'footer footer';
+    'sidebar footer';
 }
 
 .navbar {
@@ -152,6 +151,7 @@ p {
 
 .footer {
   grid-area: footer;
+  grid-column: 1 / -1;
   padding: var(--page-padding);
 }
 

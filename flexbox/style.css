@@ -29,7 +29,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: normal;
-  position: relative;
   margin: 0;
   padding: 0;
   -webkit-overflow-scrolling: touch;
@@ -118,7 +117,13 @@ p {
   line-height: 1.8;
 }
 
-/* CSS Grid Layout */
+/* Flexbox Layout */
+
+.page-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
 .navbar {
   display: flex;
