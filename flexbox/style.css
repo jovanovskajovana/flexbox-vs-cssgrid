@@ -356,33 +356,63 @@ p {
 /* Section Grid */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-auto-rows: 400px;
-  grid-auto-flow: dense;
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: 300px;
-  }
-}
-
-.item.long {
-  grid-row: span 2;
-}
-
-.item.wide {
-  grid-column: span 2;
+.row {
+  display: flex;
+  width: 100%;
 }
 
 @media (max-width: 750px) {
-  .item.long,
-  .item.wide {
-    grid-row: span 1;
-    grid-column: span 1;
+  .row {
+    flex-wrap: wrap;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col.col-4 {
+  width: 33.33%;
+}
+
+.col.col-8 {
+  width: 66.66%;
+}
+
+.col.col-6 {
+  width: 50%;
+}
+
+@media (max-width: 750px) {
+  .col.col-4,
+  .col.col-8,
+  .col.col-6 {
+    width: 100%;
+  }
+}
+
+.item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  height: 400px;
+}
+
+.item.long {
+  height: 100%;
+}
+
+@media (max-width: 750px) {
+  .item,
+  .item.long {
+    height: 300px;
   }
 }
 
