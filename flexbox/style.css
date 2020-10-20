@@ -180,7 +180,6 @@ p {
 }
 
 .line {
-  display: block;
   width: 28px;
   height: 1px;
   background-color: var(--text-primary);
@@ -515,4 +514,10 @@ p {
 
 .footer p {
   color: var(--text-higlight);
+}
+
+@media (max-width: 750px) {
+  .footer p {
+    margin-bottom: 6vw;
+  }
 }

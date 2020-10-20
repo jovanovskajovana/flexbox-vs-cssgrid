@@ -169,7 +169,7 @@ p {
 
 .btn-menu {
   display: none;
-  align-items: center;
+  justify-content: space-around;
   background-color: transparent;
   border: 0;
   padding: 0;
@@ -185,7 +185,6 @@ p {
 }
 
 .line {
-  display: block;
   width: 28px;
   height: 1px;
   background-color: var(--text-primary);
@@ -198,7 +197,10 @@ p {
 
 @media (max-width: 750px) {
   .btn-menu {
-    display: grid;
+    /* CSS Grid causes an issue on iOS - Chrome & Safari  */
+    /* display: grid; */
+    display: flex;
+    flex-direction: column;
   }
 
   .nav {
@@ -454,4 +456,10 @@ p {
 
 .footer p {
   color: var(--text-higlight);
+}
+
+@media (max-width: 750px) {
+  .footer p {
+    margin-bottom: 6vw;
+  }
 }
