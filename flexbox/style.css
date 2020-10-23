@@ -5,6 +5,7 @@
   --text-primary: #000;
   --text-seconday: #fff;
   --text-higlight: #a21d5a;
+  --img-placeholder: #f6f7f8;
   --page-padding: 3vw 8vw;
 }
 
@@ -92,6 +93,45 @@ button:active {
 
 img {
   max-width: 100%;
+  image-rendering: crisp-edges;
+}
+
+.image {
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--img-placeholder);
+  background: linear-gradient(to right, #f9f9f9 8%, #ececec 38%, #f9f9f9 54%);
+  background-size: 1000px 500px;
+  animation: load 1.8s linear infinite forwards;
+}
+
+.placeholder.fade-out {
+  animation: fadeOut 0.4s ease-out 0.4s forwards;
+}
+
+@keyframes load {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Typography */
@@ -464,6 +504,7 @@ p {
 }
 
 .item {
+  position: relative;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;

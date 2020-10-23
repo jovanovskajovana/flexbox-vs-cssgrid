@@ -70,6 +70,7 @@
         <section class="hero">
           <div class="image">
             <img src="images/img1.jpg" alt="Featured Article" />
+            <div class="placeholder"></div>
           </div>
           <div class="content">
             <h3>Featured Article</h3>
@@ -93,7 +94,10 @@
           </div>
           <div class="posts">
             <div class="post">
-              <img src="images/img2.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img2.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -103,7 +107,10 @@
               <a href="#">Read More</a>
             </div>
             <div class="post">
-              <img src="images/img3.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img3.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -113,7 +120,10 @@
               <a href="#">Read More</a>
             </div>
             <div class="post">
-              <img src="images/img4.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img4.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -123,7 +133,10 @@
               <a href="#">Read More</a>
             </div>
             <div class="post">
-              <img src="images/img5.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img5.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -133,7 +146,10 @@
               <a href="#">Read More</a>
             </div>
             <div class="post">
-              <img src="images/img6.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img6.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -143,7 +159,10 @@
               <a href="#">Read More</a>
             </div>
             <div class="post">
-              <img src="images/img7.jpg" alt="Post" />
+              <div class="image">
+                <img src="images/img7.jpg" alt="Post" />
+                <div class="placeholder"></div>
+              </div>
               <p>Joe Doe</p>
               <h2>Ut enim ad minima veniam, quis nostrum exercitationem</h2>
               <p>
@@ -168,43 +187,53 @@
           <div class="col col-4">
             <div class="item long">
               <img src="images/img8.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
           </div>
           <div class="col col-8">
             <div class="row">
               <div class="item col col-6">
                 <img src="images/img9.jpg" alt="Gallery Item" />
+                <div class="placeholder"></div>
               </div>
               <div class="item col col-6">
                 <img src="images/img10.jpg" alt="Gallery Item" />
+                <div class="placeholder"></div>
               </div>
             </div>
             <div class="row">
               <div class="item col col-6">
                 <img src="images/img11.jpg" alt="Gallery Item" />
+                <div class="placeholder"></div>
               </div>
               <div class="item col col-6">
                 <img src="images/img12.jpg" alt="Gallery Item" />
+                <div class="placeholder"></div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="item col col-4">
               <img src="images/img2.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
             <div class="item col col-4">
               <img src="images/img3.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
             <div class="item col col-4">
               <img src="images/img4.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
           </div>
           <div class="row">
             <div class="item col col-4">
               <img src="images/img6.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
             <div class="item col col-8">
               <img src="images/img13.jpg" alt="Gallery Item" />
+              <div class="placeholder"></div>
             </div>
           </div>
         </section>
@@ -217,12 +246,32 @@
     </div>
 
     <script>
+      // Handle mobile view navbar
       const navbar = document.getElementById('navbar');
 
       function toggleMenu() {
         navbar.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
       }
+
+      // Lazy load images
+      function loadImage() {
+        const placeholders = document.getElementsByClassName('placeholder');
+
+        Array.from(placeholders).forEach((placeholder) => {
+          const position = placeholder.getBoundingClientRect();
+
+          if (
+            (position.top < window.innerHeight && position.bottom >= 0) ||
+            (position.top >= 0 && position.bottom <= window.innerHeight)
+          ) {
+            placeholder.classList.add('fade-out');
+          }
+        });
+      }
+
+      loadImage();
+      window.addEventListener('scroll', loadImage);
     </script>
   </body>
 </html>
