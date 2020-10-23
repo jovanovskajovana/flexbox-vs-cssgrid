@@ -2,11 +2,13 @@
 
 This repository includes two examples of a same website template. One is built entirely with [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and the other with [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
 
+<br/>
+
 <img src="demo.gif" width="80%" height="auto" />
 
 <br/>
 
-However, there is no strict guide for setting up the layout. You can choose based on the pattern you want to achieve, as well as what works well for your team and the site you build. Both can be as good or useful in a given situation, nor do they exclude each other. You can bild a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
+However, there is no strict guide for setting up the layout. You can choose based on the pattern you want to achieve, as well as what best suits your team and the site you build. Both can be as good or useful in a given situation and certainly do not exclude each other. You can bild a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
 
 ## Pay attention to
 
