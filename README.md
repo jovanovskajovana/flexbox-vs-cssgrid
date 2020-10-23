@@ -1,24 +1,43 @@
-# Website template built with CSS Grid vs Flexbox
+# CSS Grid vs Flexbox
 
-There is no strict guide for setting up a website layout. [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) seems to have gained popularity among developers faster, but the [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) stays very close behind. Part of the reason for that popularity is that frameworks like Bootstrap or React Native have adopted Flexbox as the foundation of their layout. Another may be the learning curve that initially complicates CSS Grid with so many different ways of creating a layout. Both, however, can be equally good or useful in a given situation. They also don't exclude each other, you can bild Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
+This repository includes two examples of a same website template. One is built entirely with [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and the other with [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
 
-### Positioning elements
+<img src="demo.gif" width="80%" height="auto" />
 
-That being said, the main importance of CSS Grid and Flexbox is that components are completely decoupled from the container, which means you can remove or reuse any component elsewhere without having to change the CSS, and everything will still look perfect.
+<br/>
 
-Components should also not worry about their positioning. The parent container should place the component as it is, wrap it in a row or a column, at the beginning or the end of the container, and without the need for the component to change its spacing. The last thing may be the main difference between CSS Grid and Flexbox. In Flexbox you need to space each component out of its siblings with margins. CSS Grid provides the `gap` property to separate child components in a meaningful pattern.
+However, there is no strict guide for setting up the layout. You can choose based on the pattern you want to achieve, as well as what works well for your team and the site you build. Both can be as good or useful in a given situation, nor do they exclude each other. You can bild a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
+
+## Pay attention to
+
+#### CSS Grid's `gap` property
 
 ```
-.container {
+.posts {
   display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 ```
 
-But, in order for the components to fill the entire space of the main container, Flexbox requires an additional inner container with negative margins that will subtract the margin of the components.
+> While in Flexbox you have to space each component out of its siblings with margins, CSS Grid provides the `gap` property to separate child components in a meaningful pattern.
+
+#### The spacing in Flexbox container
 
 ```
-.container {
-  primer so flexbox
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.post {
+  width: calc(33.33% - 2rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
 }
 ```
+
+> In order for the components to fill the entire space of the main container, Flexbox may require adding negative margins that will subtract the margin of the components.
