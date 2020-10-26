@@ -1,6 +1,6 @@
 # CSS Grid vs Flexbox
 
-This repository includes two examples of a same website template. One is built entirely with [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and the other with [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
+This repository includes two examples of the same website template. One is built entirely with [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and the other with [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
 
 <br/>
 
@@ -8,7 +8,7 @@ This repository includes two examples of a same website template. One is built e
 
 <br/>
 
-Anyway, there is no strict guide to setting up the layout. You can choose based on the pattern you want to achieve, as well as what best suits your team and the site you build. Both can be as good or useful in a given situation and certainly do not exclude each other. You can create a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
+However, there is no strict guide to setting up the layout. You can choose based on the pattern you want to achieve, as well as what best suits your team and the site you build. Both can be as good or useful in a given situation and certainly they do not exclude each other. You can create a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container.
 
 ## Pay attention to
 
@@ -108,4 +108,4 @@ Anyway, there is no strict guide to setting up the layout. You can choose based 
 }
 ```
 
-> You can use `grid-column` and` grid-row` to specify the start and end line for a layout item. This allows the footer and main container to start from the `1` column line and extend to the last, marked `-1`. The sidebar will then hover over them without the need for absolute positioning.
+> You can use `grid-column` and `grid-row` to specify the start and end line for a layout item. This allows the footer and main container to start from the `1` column line and extend to the last, marked `-1`. The sidebar will then hover over them without the need for absolute positioning.
