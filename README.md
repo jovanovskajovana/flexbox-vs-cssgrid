@@ -6,6 +6,8 @@ This repository includes two examples of the same website template. One is built
 
 <img src="demo.gif" width="80%" height="auto" />
 
+[Demo](https://flexbox-vs-cssgrid.netlify.app/)
+
 <br/>
 
 However, there is no strict guide to setting up the layout. You can choose based on the pattern you want to achieve, as well as what best suits your team and the site you build. You can create a Grid container and nest a Flexbox item in it, or make the Flexbox item a Grid container. Both can be as good or useful in a given situation and certainly they do not exclude each other.
