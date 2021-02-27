@@ -60,6 +60,16 @@ p {
   outline: 0 !important;
 }
 
+::-moz-selection {
+  color: #fff;
+  background: #232327;
+}
+
+::selection {
+  color: #fff;
+  background: #232327;
+}
+
 a,
 button {
   transition: all 0.3s;
