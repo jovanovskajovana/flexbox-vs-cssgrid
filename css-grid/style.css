@@ -6,7 +6,7 @@
   --text-seconday: #fff;
   --text-higlight: #a21d5a;
   --img-placeholder: #f6f7f8;
-  --page-padding: 3vw 8vw;
+  --page-padding: 6vh 8vw;
 }
 
 * {
@@ -177,7 +177,7 @@ p {
 
 .sidebar {
   grid-area: sidebar;
-  padding: 10vw 2vw;
+  padding: 14vh 2vw;
   z-index: 1;
 }
 
@@ -185,7 +185,7 @@ p {
   grid-area: container;
   grid-column: 1 / -1;
   display: grid;
-  row-gap: 10vw;
+  row-gap: 20vh;
   padding: var(--page-padding);
 }
 
@@ -326,8 +326,13 @@ p {
   display: grid;
   align-items: center;
   justify-content: center;
-  height: 4rem;
+  height: 3rem;
   width: 3rem;
+}
+
+.social-item svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Section Hero */
@@ -360,7 +365,7 @@ p {
 
 .articles {
   display: grid;
-  row-gap: 6vw;
+  row-gap: 10vh;
 }
 
 .headline {
@@ -504,6 +509,6 @@ p {
 
 @media (max-width: 750px) {
   .footer p {
-    margin-bottom: 6vw;
+    margin-bottom: 2vh;
   }
 }
