@@ -4,9 +4,9 @@
   --bg-primary: #fff;
   --text-primary: #000;
   --text-seconday: #fff;
-  --text-higlight: #a21d5a;
+  --text-higlight: #685b52;
   --img-placeholder: #f6f7f8;
-  --page-padding: 3vw 8vw;
+  --page-padding: 6vh 8vw;
 }
 
 * {
@@ -60,6 +60,16 @@ p {
   outline: 0 !important;
 }
 
+::-moz-selection {
+  color: #fff;
+  background: #232327;
+}
+
+::selection {
+  color: #fff;
+  background: #232327;
+}
+
 a,
 button {
   transition: all 0.3s;
@@ -72,6 +82,7 @@ a:active {
 }
 
 button {
+  position: relative;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.2em;
@@ -83,12 +94,34 @@ button {
   cursor: pointer;
 }
 
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+button:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--text-higlight);
+  will-change: width;
+  transition: width 0.6s cubic-bezier(0.08, 0.03, 0.22, 0.87);
+}
+
 button:hover,
 button:focus,
 button:active {
   color: var(--text-seconday);
-  background-color: var(--text-higlight);
   border: 1px solid var(--text-higlight);
+}
+
+button:hover:after,
+button:focus:after,
+button:active:after {
+  width: 100%;
 }
 
 img {
@@ -176,9 +209,15 @@ p {
   position: absolute;
   left: 0;
   height: 90%;
-  padding: 10vw 2vw;
+  padding: 14vh 2vw;
   margin-top: 10%;
   z-index: 1;
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    margin-top: 30%;
+  }
 }
 
 .container {
@@ -210,6 +249,10 @@ p {
   padding: 0;
   height: 20px;
   z-index: 3;
+}
+
+.btn-menu:after {
+  display: none;
 }
 
 .btn-menu:hover,
@@ -320,8 +363,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4rem;
+  height: 3rem;
   width: 3rem;
+}
+
+.social-item svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Section Hero */
@@ -329,7 +377,7 @@ p {
 .hero {
   display: flex;
   align-items: center;
-  margin-bottom: 10vw;
+  margin-bottom: 20vh;
 }
 
 @media (max-width: 750px) {
@@ -373,13 +421,13 @@ p {
 .articles {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10vw;
+  margin-bottom: 20vh;
 }
 
 .headline {
   max-width: 50vw;
   text-align: center;
-  margin: 0 auto 6vw;
+  margin: 0 auto 10vh;
 }
 
 @media (max-width: 992px) {
@@ -445,7 +493,7 @@ p {
 
 .quote {
   max-width: 50vw;
-  margin: 0 auto 10vw;
+  margin: 0 auto 20vh;
 }
 
 @media (max-width: 992px) {
@@ -559,6 +607,6 @@ p {
 
 @media (max-width: 750px) {
   .footer p {
-    margin-bottom: 6vw;
+    margin-bottom: 2vh;
   }
 }

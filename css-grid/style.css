@@ -4,9 +4,9 @@
   --bg-primary: #fff;
   --text-primary: #000;
   --text-seconday: #fff;
-  --text-higlight: #a21d5a;
+  --text-higlight: #685b52;
   --img-placeholder: #f6f7f8;
-  --page-padding: 3vw 8vw;
+  --page-padding: 6vh 8vw;
 }
 
 * {
@@ -60,6 +60,16 @@ p {
   outline: 0 !important;
 }
 
+::-moz-selection {
+  color: #fff;
+  background: #232327;
+}
+
+::selection {
+  color: #fff;
+  background: #232327;
+}
+
 a,
 button {
   transition: all 0.3s;
@@ -72,6 +82,7 @@ a:active {
 }
 
 button {
+  position: relative;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.2em;
@@ -83,12 +94,34 @@ button {
   cursor: pointer;
 }
 
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+button:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--text-higlight);
+  will-change: width;
+  transition: width 0.6s cubic-bezier(0.08, 0.03, 0.22, 0.87);
+}
+
 button:hover,
 button:focus,
 button:active {
   color: var(--text-seconday);
-  background-color: var(--text-higlight);
   border: 1px solid var(--text-higlight);
+}
+
+button:hover:after,
+button:focus:after,
+button:active:after {
+  width: 100%;
 }
 
 img {
@@ -177,7 +210,7 @@ p {
 
 .sidebar {
   grid-area: sidebar;
-  padding: 10vw 2vw;
+  padding: 14vh 2vw;
   z-index: 1;
 }
 
@@ -185,7 +218,7 @@ p {
   grid-area: container;
   grid-column: 1 / -1;
   display: grid;
-  row-gap: 10vw;
+  row-gap: 20vh;
   padding: var(--page-padding);
 }
 
@@ -215,6 +248,10 @@ p {
   padding: 0;
   height: 20px;
   z-index: 3;
+}
+
+.btn-menu:after {
+  display: none;
 }
 
 .btn-menu:hover,
@@ -326,8 +363,13 @@ p {
   display: grid;
   align-items: center;
   justify-content: center;
-  height: 4rem;
+  height: 3rem;
   width: 3rem;
+}
+
+.social-item svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Section Hero */
@@ -360,7 +402,7 @@ p {
 
 .articles {
   display: grid;
-  row-gap: 6vw;
+  row-gap: 10vh;
 }
 
 .headline {
@@ -504,6 +546,6 @@ p {
 
 @media (max-width: 750px) {
   .footer p {
-    margin-bottom: 6vw;
+    margin-bottom: 2vh;
   }
 }
