@@ -214,6 +214,12 @@ p {
   z-index: 1;
 }
 
+@media (max-width: 750px) {
+  .sidebar {
+    margin-top: 30%;
+  }
+}
+
 .container {
   padding: var(--page-padding);
 }
@@ -243,6 +249,10 @@ p {
   padding: 0;
   height: 20px;
   z-index: 3;
+}
+
+.btn-menu:after {
+  display: none;
 }
 
 .btn-menu:hover,

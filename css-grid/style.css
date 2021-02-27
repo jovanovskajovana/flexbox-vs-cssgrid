@@ -250,6 +250,10 @@ p {
   z-index: 3;
 }
 
+.btn-menu:after {
+  display: none;
+}
+
 .btn-menu:hover,
 .btn-menu:focus,
 .btn-menu:active {
