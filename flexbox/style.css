@@ -4,7 +4,7 @@
   --bg-primary: #fff;
   --text-primary: #000;
   --text-seconday: #fff;
-  --text-higlight: #685b52;
+  --text-highlight: #846d5e;
   --img-placeholder: #f6f7f8;
   --page-padding: 6vh 8vw;
 }
@@ -106,7 +106,7 @@ button:after {
   left: 0;
   height: 100%;
   width: 0;
-  background-color: var(--text-higlight);
+  background-color: var(--text-highlight);
   will-change: width;
   transition: width 0.6s cubic-bezier(0.08, 0.03, 0.22, 0.87);
 }
@@ -115,7 +115,7 @@ button:hover,
 button:focus,
 button:active {
   color: var(--text-seconday);
-  border: 1px solid var(--text-higlight);
+  border: 1px solid var(--text-highlight);
 }
 
 button:hover:after,
@@ -437,7 +437,7 @@ p {
 }
 
 .headline h1 {
-  color: var(--text-higlight);
+  color: var(--text-highlight);
   margin-bottom: 2rem;
 }
 
@@ -475,7 +475,7 @@ p {
 
 .post a {
   position: relative;
-  color: var(--text-higlight);
+  color: var(--text-highlight);
   font-weight: 300;
 }
 
@@ -486,7 +486,7 @@ p {
   bottom: -2px;
   height: 1px;
   width: 100%;
-  background-color: var(--text-higlight);
+  background-color: var(--text-highlight);
 }
 
 /* Section Quote */
@@ -602,7 +602,7 @@ p {
 }
 
 .footer p {
-  color: var(--text-higlight);
+  color: var(--text-highlight);
 }
 
 @media (max-width: 750px) {
